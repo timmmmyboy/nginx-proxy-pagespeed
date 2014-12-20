@@ -210,19 +210,3 @@ server {
 }
 
 {{ end }}
-
-{
-	gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-
-	server_name fedwiki.djon.es;
-
-	proxy_buffering off;
-
-	include pagespeed.conf;
-	pagespeed Domain fedwiki.djon.es;
-
-	location / {
-            proxy_pass http://fedwiki.djon.es
-            include /etc/nginx/proxy_params;
-    }
-}
